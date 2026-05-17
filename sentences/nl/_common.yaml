@@ -741,6 +741,7 @@ expansion_rules:
   to: "(naar|op)"
   is: "(zijn|is|staa(n|t)|zit[ten]|word[t|en]|lig(t|gen))"
   all: "(alle|elke|iedere|overal)"
+  everywhere: "(overal|<in> ((elke|iedere) (kamer|ruimte|verdieping)|(alle|al de) (kamers|ruimtes|verdiepingen))|(in|van|bij) het [hele] huis)"
   state: "(status|staat|stand)"
   # cover device classes
   awning: "(luifel[s]|[zonne]scherm[en])"

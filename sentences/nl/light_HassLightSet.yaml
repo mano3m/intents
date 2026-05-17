@@ -122,3 +122,15 @@ intents:
         requires_context:
           area:
             slot: true
+
+      # Change all lights
+      - sentences: # ensure that either "kleurtemperatuur", "lichttemperatuur" or "temperatuur van licht" (or variants) are in there to prevent mixup with air temperature
+          - "[<numeric_value_set>] ([de] (kleur|<light_composed>[[ ]kleur])[ ]temperatuur;[[van] (<light>|<all_light>)];<everywhere>;[<to>] <color_temp>)"
+          - "[<numeric_value_set>] ([de] [kleur[ ]|<light_composed>[[ ]kleur][ ]]temperatuur;[van] <all_light>;[<to>] <color_temp>)"
+          - "[<numeric_value_set>] ([de] temperatuur;[van] (<light>|<all_light>);<everywhere>;[<to>] <color_temp>)"
+          - "([de] (kleur|<light_composed>[[ ]kleur])[ ]temperatuur;[[van] (<light>|<all_light>)];<everywhere>;[<to>] <color_temp>) <change_infinitive>"
+          - "([de] [kleur[ ]|<light_composed>[[ ]kleur][ ]]temperatuur;[van] <all_light>;[<to>] <color_temp>) <change_infinitive>"
+          - "([de] temperatuur;[van] (<light>|<all_light>);<everywhere>;[<to>] <color_temp>) <change_infinitive>"
+        response: "temperature"
+        slots:
+          name: "all"
